@@ -31,7 +31,8 @@ export const metadata: Metadata = {
       'AlpAI je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
   },
   icons: {
-    icon: '/favicon.svg',
+    icon: '/alpai-logo.png',
+    apple: '/alpai-logo.png',
   },
 };
 
@@ -54,9 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <header className="site-header">
           <Link className="brand" href="/">
-            <span className="brand-mark" aria-hidden="true">
-              AI
-            </span>
+            <img className="brand-icon" src="/alpai-logo.png" alt="" aria-hidden="true" />
             <span>AlpAI</span>
           </Link>
 

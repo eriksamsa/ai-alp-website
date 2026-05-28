@@ -54,32 +54,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Prostor za kasnejši logo ali hero sliko">
-          <div className="device-card">
-            <div className="device-bar" />
-            <div className="app-logo-preview" aria-label="AlpAI začasni logotip aplikacije">
-              <div className="app-logo-icon" aria-hidden="true">
-                <span className="logo-sky" />
-                <span className="logo-peak logo-peak-back" />
-                <span className="logo-peak logo-peak-front" />
-                <span className="logo-route" />
-              </div>
-              <div>
-                <span>AlpAI</span>
-                <strong>Mountain assistant</strong>
-              </div>
-            </div>
-            <div className="mountain-panel" aria-hidden="true">
-              <span className="sun" />
-              <span className="peak peak-back" />
-              <span className="peak peak-front" />
-              <span className="path-line" />
-              <span className="path-dot path-start" />
-              <span className="path-dot path-end" />
-            </div>
-            <div className="route-summary">
-              <span>Priprava ture</span>
-              <strong>Vreme, pot, varnost</strong>
+        <div className="hero-visual" aria-label="Logotip aplikacije AlpAI">
+          <div className="logo-showcase">
+            <img src="/alpai-logo.png" alt="AlpAI logo aplikacije" />
+            <div className="logo-caption">
+              <span>AlpAI</span>
+              <strong>Gorski pomočnik za varnejšo pripravo</strong>
             </div>
           </div>
         </div>
