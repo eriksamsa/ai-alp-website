@@ -7,28 +7,28 @@ const siteUrl = 'https://ai-alp.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'AI-ALP | Pametnejše načrtovanje gorskih tur',
-    template: '%s | AI-ALP',
+    default: 'AlpAI | Pametnejše načrtovanje gorskih tur',
+    template: '%s | AlpAI',
   },
   description:
-    'AI-ALP je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
-  applicationName: 'AI-ALP',
+    'AlpAI je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
+  applicationName: 'AlpAI',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     url: siteUrl,
-    siteName: 'AI-ALP',
-    title: 'AI-ALP | Pametnejše načrtovanje gorskih tur',
+    siteName: 'AlpAI',
+    title: 'AlpAI | Pametnejše načrtovanje gorskih tur',
     description:
-      'AI-ALP je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
+      'AlpAI je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-ALP | Pametnejše načrtovanje gorskih tur',
+    title: 'AlpAI | Pametnejše načrtovanje gorskih tur',
     description:
-      'AI-ALP je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
+      'AlpAI je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
   },
   icons: {
     icon: '/favicon.svg',
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span className="brand-mark" aria-hidden="true">
               AI
             </span>
-            <span>AI-ALP</span>
+            <span>AlpAI</span>
           </Link>
 
           <nav className="site-nav" aria-label="Glavna navigacija">
@@ -73,7 +73,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
         <footer className="site-footer">
           <div>
-            <strong>AI-ALP</strong>
+            <strong>AlpAI</strong>
             <p>Tvoja pot do novih razgledov.</p>
           </div>
           <nav aria-label="Povezave v nogi">

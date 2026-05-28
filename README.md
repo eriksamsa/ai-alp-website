@@ -1,6 +1,6 @@
-# AI-ALP Website
+# AlpAI Website
 
-Moderna predstavitvena spletna stran za mobilno aplikacijo AI-ALP na domeni `ai-alp.com`.
+Moderna predstavitvena spletna stran za mobilno aplikacijo AlpAI na domeni `ai-alp.com`.
 
 ## Tehnologija
 

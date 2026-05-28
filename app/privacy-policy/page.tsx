@@ -2,19 +2,19 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Politika zasebnosti',
-  description: 'Osnovna politika zasebnosti za aplikacijo AI-ALP na domeni ai-alp.com.',
+  description: 'Osnovna politika zasebnosti za aplikacijo AlpAI na domeni ai-alp.com.',
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <section className="content-page legal-page">
-      <p className="eyebrow">AI-ALP</p>
+      <p className="eyebrow">AlpAI</p>
       <h1>Politika zasebnosti</h1>
       <p className="updated">Zadnja posodobitev: maj 2026</p>
 
       <div className="legal-copy">
         <p>
-          Ta politika zasebnosti opisuje osnovni pristop k zasebnosti za aplikacijo AI-ALP in
+          Ta politika zasebnosti opisuje osnovni pristop k zasebnosti za aplikacijo AlpAI in
           spletno domeno <strong>ai-alp.com</strong>. Aplikacija je trenutno v razvoju.
         </p>
 

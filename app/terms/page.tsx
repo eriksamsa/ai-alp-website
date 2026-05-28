@@ -2,32 +2,32 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Pogoji uporabe',
-  description: 'Osnovni pogoji uporabe in varnostno opozorilo za aplikacijo AI-ALP.',
+  description: 'Osnovni pogoji uporabe in varnostno opozorilo za aplikacijo AlpAI.',
 };
 
 export default function TermsPage() {
   return (
     <section className="content-page legal-page">
-      <p className="eyebrow">AI-ALP</p>
+      <p className="eyebrow">AlpAI</p>
       <h1>Pogoji uporabe</h1>
       <p className="updated">Zadnja posodobitev: maj 2026</p>
 
       <div className="legal-copy">
         <p>
-          Ti pogoji uporabe so osnovna informativna različica za aplikacijo AI-ALP, ki je trenutno v
+          Ti pogoji uporabe so osnovna informativna različica za aplikacijo AlpAI, ki je trenutno v
           razvoju. Pred javnim izidom se lahko pogoji posodobijo glede na dejanske funkcije
           aplikacije.
         </p>
 
         <h2>Namen aplikacije</h2>
         <p>
-          AI-ALP je namenjen podpori pri načrtovanju gorskih tur, preverjanju razmer, razumevanju
+          AlpAI je namenjen podpori pri načrtovanju gorskih tur, preverjanju razmer, razumevanju
           varnostnih informacij in pripravi na obisk gora.
         </p>
 
         <h2>Varnostno opozorilo</h2>
         <p className="warning-box">
-          AI-ALP je informativni pripomoček in ne nadomešča lastne presoje, uradnih vremenskih
+          AlpAI je informativni pripomoček in ne nadomešča lastne presoje, uradnih vremenskih
           opozoril, planinskih vodnikov, označb na terenu ali odločitev uporabnika v gorah.
         </p>
 
@@ -39,7 +39,7 @@ export default function TermsPage() {
 
         <h2>Dostopnost in spremembe</h2>
         <p>
-          Aplikacija in njene funkcije se lahko spreminjajo. AI-ALP si pridržuje pravico do
+          Aplikacija in njene funkcije se lahko spreminjajo. AlpAI si pridržuje pravico do
           posodobitev vsebine, funkcij in pogojev uporabe pred javnim izidom.
         </p>
 

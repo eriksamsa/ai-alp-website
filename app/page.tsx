@@ -33,10 +33,10 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Mobilna aplikacija za gore</p>
-          <h1>AI-ALP</h1>
+          <h1>AlpAI</h1>
           <p className="slogan">Tvoja pot do novih razgledov.</p>
           <p className="hero-text">
-            AI-ALP pomaga pri načrtovanju gorskih tur, preverjanju razmer in varnejšem odločanju
+            AlpAI pomaga pri načrtovanju gorskih tur, preverjanju razmer in varnejšem odločanju
             pred odhodom v gore.
           </p>
           <div className="hero-actions">
@@ -52,7 +52,7 @@ export default function HomePage() {
         <div className="hero-visual" aria-label="Prostor za kasnejši logo ali hero sliko">
           <div className="device-card">
             <div className="device-bar" />
-            <div className="app-logo-preview" aria-label="AI-ALP začasni logotip aplikacije">
+            <div className="app-logo-preview" aria-label="AlpAI začasni logotip aplikacije">
               <div className="app-logo-icon" aria-hidden="true">
                 <span className="logo-sky" />
                 <span className="logo-peak logo-peak-back" />
@@ -60,7 +60,7 @@ export default function HomePage() {
                 <span className="logo-route" />
               </div>
               <div>
-                <span>AI-ALP</span>
+                <span>AlpAI</span>
                 <strong>Mountain assistant</strong>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function HomePage() {
           <strong>Kmalu na voljo</strong>
         </div>
         <p>
-          AI-ALP je trenutno v razvoju. Stran je pripravljena za javno predstavitev, pravne vsebine
+          AlpAI je trenutno v razvoju. Stran je pripravljena za javno predstavitev, pravne vsebine
           pa se lahko posodobijo pred izidom aplikacije.
         </p>
       </section>
@@ -113,7 +113,7 @@ export default function HomePage() {
           <h2>Tehnologija kot podpora, ne nadomestilo presoje.</h2>
         </div>
         <p>
-          AI-ALP je zasnovan kot zanesljiv informativni pripomoček za boljšo pripravo na turo.
+          AlpAI je zasnovan kot zanesljiv informativni pripomoček za boljšo pripravo na turo.
           Končne odločitve v gorah vedno ostanejo odgovornost uporabnika.
         </p>
       </section>
