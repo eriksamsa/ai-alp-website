@@ -59,7 +59,7 @@ export default function HomePage() {
             <img src="/alpai-logo.png" alt="AlpAI logo aplikacije" />
             <div className="logo-caption">
               <span>AlpAI</span>
-              <strong>Gorski pomočnik za varnejšo pripravo</strong>
+              <strong>Tvoja pot do novih razgledov.</strong>
             </div>
           </div>
         </div>
