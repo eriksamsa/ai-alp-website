@@ -483,6 +483,12 @@ h3 {
   padding: 1rem 0 5.5rem;
 }
 
+.section .eyebrow,
+.split-section .eyebrow,
+.content-page .eyebrow {
+  color: var(--green-dark);
+}
+
 .section-heading {
   max-width: 46rem;
   margin-bottom: 2rem;
@@ -540,6 +546,12 @@ h3 {
   padding: clamp(3rem, 8vw, 6rem) 0;
 }
 
+.content-page,
+.section,
+.split-section {
+  color: var(--text);
+}
+
 .content-page > p {
   max-width: 48rem;
   font-size: 1.08rem;
@@ -566,14 +578,21 @@ h3 {
 
 .legal-copy {
   margin-top: 2rem;
-  border-top: 1px solid rgba(201, 216, 215, 0.9);
-  padding-top: 2rem;
+  border: 1px solid rgba(201, 216, 215, 0.9);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 1.6rem;
+  box-shadow: 0 14px 36px rgba(16, 43, 66, 0.06);
 }
 
 .legal-copy h2 {
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   color: var(--navy);
   font-size: 1.35rem;
+}
+
+.legal-copy h2:first-of-type {
+  margin-top: 0.6rem;
 }
 
 .legal-copy a {
@@ -599,18 +618,27 @@ h3 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  border-top: 1px solid rgba(159, 230, 188, 0.16);
+  border-top: 1px solid rgba(201, 216, 215, 0.9);
   padding: 2rem 0 2.5rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--text);
 }
 
 .site-footer strong {
-  color: var(--white);
+  color: var(--navy);
 }
 
 .site-footer p {
   margin: 0.35rem 0 0;
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: #435166;
+}
+
+.site-footer a:hover {
+  background: #e8efec;
+  color: var(--navy);
 }
 
 @media (max-width: 900px) {
