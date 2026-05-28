@@ -39,6 +39,11 @@ export default function HomePage() {
             AlpAI pomaga pri načrtovanju gorskih tur, preverjanju razmer in varnejšem odločanju
             pred odhodom v gore.
           </p>
+          <div className="hero-chips" aria-label="Ključne prednosti">
+            <span>AI priprava</span>
+            <span>Vreme</span>
+            <span>Varnost</span>
+          </div>
           <div className="hero-actions">
             <a className="button primary" href="#availability">
               Kmalu na voljo
