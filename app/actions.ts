@@ -1,6 +1,6 @@
 'use server';
 
-export async function joinWaitlist(formData: FormData): Promise<{ success: boolean; message: string }> {
+export async function joinWaitlist(_prev: { success: boolean; message: string }, formData: FormData): Promise<{ success: boolean; message: string }> {
   const email = String(formData.get('email') ?? '').trim().toLowerCase();
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
