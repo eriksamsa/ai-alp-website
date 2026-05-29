@@ -1015,6 +1015,14 @@ h3 {
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* feature-card--full fills the ScrollAnimate wrapper */
 .feature-card--full {
   height: 100%;
