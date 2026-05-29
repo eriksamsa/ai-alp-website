@@ -40,6 +40,7 @@ export const viewport: Viewport = {
   themeColor: '#0b1f36',
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
 };
 
 const navItems = [
