@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import WaitlistForm from './WaitlistForm';
 
 const features = [
   {
@@ -70,10 +71,10 @@ export default function HomePage() {
           <span className="status-dot" />
           <strong>Kmalu na voljo</strong>
         </div>
-        <p>
-          AlpAI je trenutno v razvoju. Stran je pripravljena za javno predstavitev, pravne vsebine
-          pa se lahko posodobijo pred izidom aplikacije.
-        </p>
+        <div className="availability-right">
+          <p>Bodite med prvimi. Pustite email in vas obvestimo ob izidu.</p>
+          <WaitlistForm />
+        </div>
       </section>
 
       <section className="section">

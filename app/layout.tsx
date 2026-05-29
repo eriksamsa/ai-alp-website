@@ -16,14 +16,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  openGraph: {
-    type: 'website',
-    url: siteUrl,
-    siteName: 'AlpAI',
-    title: 'AlpAI | Pametnejše načrtovanje gorskih tur',
-    description:
-      'AlpAI je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'AlpAI | Pametnejše načrtovanje gorskih tur',
@@ -31,8 +23,17 @@ export const metadata: Metadata = {
       'AlpAI je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
   },
   icons: {
-    icon: '/alpai-logo.png',
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/alpai-logo.png' }],
     apple: '/alpai-logo.png',
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    siteName: 'AlpAI',
+    title: 'AlpAI | Pametnejše načrtovanje gorskih tur',
+    description:
+      'AlpAI je mobilna aplikacija za načrtovanje gorskih tur, vreme, varnostne napotke in informacije za obiskovalce gora.',
+    images: [{ url: `${siteUrl}/opengraph-image`, width: 1200, height: 630 }],
   },
 };
 

@@ -464,12 +464,78 @@ h3 {
   align-items: center;
   gap: 0.6rem;
   color: var(--white);
+  white-space: nowrap;
 }
 
-.availability p {
+.availability-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.availability-right p {
   margin: 0;
   color: rgba(232, 249, 239, 0.76);
   line-height: 1.55;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.waitlist-input-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.waitlist-input {
+  flex: 1;
+  min-width: 0;
+  height: 3rem;
+  border: 1px solid rgba(159, 230, 188, 0.3);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  padding: 0 1rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.waitlist-input::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.waitlist-input:focus {
+  border-color: rgba(159, 230, 188, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.waitlist-btn {
+  white-space: nowrap;
+  min-width: 9rem;
+}
+
+.waitlist-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.waitlist-msg {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.waitlist-msg--ok {
+  color: var(--green);
+}
+
+.waitlist-msg--err {
+  color: #ff8080;
 }
 
 .status-dot {
