@@ -123,7 +123,7 @@ export default function HomePage() {
       </section>
 
       <section className="availability" id="availability">
-        <div>
+        <div className="availability-badge">
           <span className="status-dot" />
           <strong>Kmalu na voljo</strong>
         </div>

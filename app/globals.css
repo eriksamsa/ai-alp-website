@@ -447,10 +447,10 @@ h3 {
 }
 
 .availability {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: flex-start;
   margin-bottom: 5rem;
   border: 1px solid rgba(159, 230, 188, 0.34);
   border-radius: var(--radius);
@@ -459,31 +459,13 @@ h3 {
   box-shadow: 0 18px 50px rgba(7, 22, 38, 0.14);
 }
 
-@media (max-width: 640px) {
-  .availability {
-    grid-template-columns: 1fr;
-  }
-
-  .waitlist-input-row {
-    flex-direction: column;
-  }
-
-  .waitlist-input {
-    width: 100%;
-  }
-
-  .waitlist-btn {
-    width: 100%;
-    min-width: unset;
-  }
-}
-
-.availability div {
+.availability-badge {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   color: var(--white);
   white-space: nowrap;
+  padding-top: 0.25rem;
 }
 
 .availability-right {
@@ -491,6 +473,7 @@ h3 {
   flex-direction: column;
   gap: 0.75rem;
   flex: 1;
+  min-width: min(100%, 18rem);
 }
 
 .availability-right p {
@@ -508,7 +491,6 @@ h3 {
 .waitlist-input-row {
   display: flex;
   gap: 0.6rem;
-  flex-wrap: wrap;
 }
 
 .waitlist-input {
@@ -535,7 +517,7 @@ h3 {
 
 .waitlist-btn {
   white-space: nowrap;
-  min-width: 9rem;
+  flex-shrink: 0;
 }
 
 .waitlist-btn:disabled {
@@ -1204,7 +1186,6 @@ details[open] .faq-question::after {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .availability,
   .split-section {
     grid-template-columns: 1fr;
   }

@@ -130,7 +130,7 @@ export default function EnHomePage() {
       </section>
 
       <section className="availability" id="availability">
-        <div>
+        <div className="availability-badge">
           <span className="status-dot" />
           <strong>Coming soon</strong>
         </div>
