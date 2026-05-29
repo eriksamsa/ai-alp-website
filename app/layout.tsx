@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const siteUrl = 'https://ai-alp.com';
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             ))}
           </nav>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
