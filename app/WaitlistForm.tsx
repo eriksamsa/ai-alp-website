@@ -9,8 +9,8 @@ export default function WaitlistForm() {
   const [state, action, pending] = useActionState(joinWaitlist, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
-  if (state.success) {
-    formRef.current?.reset();
+  if (state.success && formRef.current) {
+    formRef.current.reset();
   }
 
   return (
@@ -25,11 +25,15 @@ export default function WaitlistForm() {
           aria-label="Email naslov za obvestilo ob izidu"
         />
         <button type="submit" className="button primary waitlist-btn" disabled={pending}>
+          {pending ? (
+            <span className="waitlist-spinner" aria-hidden="true" />
+          ) : null}
           {pending ? 'Prijavljam…' : 'Obvesti me'}
         </button>
       </div>
       {state.message && (
-        <p className={`waitlist-msg ${state.success ? 'waitlist-msg--ok' : 'waitlist-msg--err'}`}>
+        <p className={`waitlist-msg ${state.success ? 'waitlist-msg--ok' : 'waitlist-msg--err'}`}
+           role="status">
           {state.message}
         </p>
       )}
