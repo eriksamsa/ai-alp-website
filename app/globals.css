@@ -455,8 +455,27 @@ h3 {
   border: 1px solid rgba(159, 230, 188, 0.34);
   border-radius: var(--radius);
   background: linear-gradient(135deg, rgba(7, 22, 38, 0.96), rgba(16, 43, 66, 0.94));
-  padding: 1rem 1.15rem;
+  padding: 1.25rem 1.15rem;
   box-shadow: 0 18px 50px rgba(7, 22, 38, 0.14);
+}
+
+@media (max-width: 640px) {
+  .availability {
+    grid-template-columns: 1fr;
+  }
+
+  .waitlist-input-row {
+    flex-direction: column;
+  }
+
+  .waitlist-input {
+    width: 100%;
+  }
+
+  .waitlist-btn {
+    width: 100%;
+    min-width: unset;
+  }
 }
 
 .availability div {
