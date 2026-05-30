@@ -107,8 +107,8 @@ p, h1, h2, h3 { margin-top: 0; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(520px, 60%);
-  opacity: 0.06;
+  width: min(500px, 55%);
+  opacity: 0.12;
   pointer-events: none;
   z-index: 0;
   user-select: none;

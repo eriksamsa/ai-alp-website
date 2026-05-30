@@ -2,6 +2,7 @@ import Link from 'next/link';
 import WaitlistForm from '../WaitlistForm';
 import ScrollAnimate from '../ScrollAnimate';
 import MountainBackground from '../MountainBackground';
+import LogoWatermark from '../LogoWatermark';
 
 const features = [
   {
@@ -57,7 +58,7 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <img src="/logo-alpai.png" alt="" className="hero-watermark" aria-hidden="true" />
+        <LogoWatermark className="hero-watermark" />
         <MountainBackground />
         <div className="hero-copy">
           <p className="eyebrow">Mobilna aplikacija za gore</p>
