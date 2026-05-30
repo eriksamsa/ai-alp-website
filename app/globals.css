@@ -230,7 +230,6 @@ p, h1, h2, h3 { margin-top: 0; }
   height: auto;
   display: block;
   margin-bottom: 0.5rem;
-  mix-blend-mode: screen;
 }
 
 .hero-sub {

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import WaitlistForm from '../WaitlistForm';
 import ScrollAnimate from '../ScrollAnimate';
+import TransparentLogo from '../TransparentLogo';
 
 const features = [
   {
@@ -44,7 +45,7 @@ export default function HomePage() {
             <span className="hero-badge-icon">⛰</span>
             Premišljene odločitve. Nepozabni razgledi.
           </div>
-          <img src="/logo-alpai.png" alt="alpAI" className="hero-logo" />
+          <TransparentLogo src="/logo-alpai.png" alt="alpAI" className="hero-logo" />
           <h2 className="hero-sub">Pametnejše načrtovanje gorskih tur</h2>
           <p className="hero-text">
             Načrtuj pametneje, pojdi varneje, razišni več.
