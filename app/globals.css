@@ -252,6 +252,7 @@ p, h1, h2, h3 { margin-top: 0; }
   display: block;
   margin-bottom: 0.25rem;
   filter: saturate(1.4) brightness(1.15) contrast(1.1);
+  align-self: center;
 }
 
 .hero-sub {
