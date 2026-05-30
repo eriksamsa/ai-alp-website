@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import LanguageSwitcher from '../LanguageSwitcher';
+import MountainLogo from '../MountainLogo';
 import '../globals.css';
 
 const siteUrl = 'https://ai-alp.com';
@@ -61,7 +62,7 @@ export default function EnLayout({ children }: Readonly<{ children: React.ReactN
       <body>
         <header className="site-header">
           <Link className="brand" href="/en">
-            <img className="brand-icon" src="/alpai-logo.png" alt="" aria-hidden="true" />
+            <MountainLogo size={38} />
             <span>AlpAI</span>
           </Link>
           <nav className="site-nav" aria-label="Main navigation">
