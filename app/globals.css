@@ -329,7 +329,7 @@ p, h1, h2, h3 { margin-top: 0; }
 .section h2,
 .split-section h2,
 .content-page h1 {
-  color: #ffffff;
+  color: #0a1e2d;
   font-size: clamp(2rem, 4vw, 3.1rem);
   line-height: 1.08;
 }
@@ -351,14 +351,14 @@ p, h1, h2, h3 { margin-top: 0; }
 }
 
 .feature-card h3 {
-  color: #ffffff;
+  color: #0a1e2d;
   font-size: 1.18rem;
 }
 
 .feature-card p,
 .split-section p,
 .content-page p {
-  color: rgba(255,255,255,0.78);
+  color: #4a5c6a;
   line-height: 1.68;
 }
 
@@ -399,7 +399,7 @@ p, h1, h2, h3 { margin-top: 0; }
 /* ── Legal ── */
 .legal-page { max-width: 840px; }
 
-.updated { color: var(--green-bright); font-weight: 780; }
+.updated { color: #1a6b22; font-weight: 780; }
 
 .legal-copy {
   margin-top: 2rem;
@@ -412,7 +412,7 @@ p, h1, h2, h3 { margin-top: 0; }
 
 .legal-copy h2 {
   margin-top: 1.8rem;
-  color: #ffffff;
+  color: #0a1e2d;
   font-size: 1.35rem;
 }
 
@@ -431,7 +431,7 @@ p, h1, h2, h3 { margin-top: 0; }
   border-radius: var(--radius);
   background: rgba(101,217,108,0.08);
   padding: 1rem 1.15rem;
-  color: var(--text) !important;
+  color: #0a3318 !important;
   font-weight: 760;
 }
 
@@ -708,7 +708,7 @@ p, h1, h2, h3 { margin-top: 0; }
   justify-content: space-between;
   list-style: none;
   padding: 1rem 1.15rem;
-  color: #ffffff;
+  color: #0a1e2d;
   font-size: 1rem;
   font-weight: 780;
   cursor: pointer;
@@ -728,7 +728,7 @@ p, h1, h2, h3 { margin-top: 0; }
 
 details[open] .faq-question::after { transform: rotate(45deg); }
 
-.faq-answer { margin: 0; padding: 0 1.15rem 1rem; color: var(--muted); line-height: 1.65; font-size: 0.97rem; }
+.faq-answer { margin: 0; padding: 0 1.15rem 1rem; color: #4a5c6a; line-height: 1.65; font-size: 0.97rem; }
 
 /* ── 404 page ── */
 .not-found {
