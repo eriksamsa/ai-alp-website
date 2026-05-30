@@ -97,7 +97,7 @@ p, h1, h2, h3 { margin-top: 0; }
   gap: clamp(2rem, 5vw, 5rem);
   min-height: calc(100vh - 52px);
   padding: clamp(3rem, 8vw, 6.5rem) clamp(1rem, 5vw, 5rem) clamp(2.5rem, 5vw, 4rem);
-  background: #ffffff;
+  background: #060b12;
   overflow: hidden;
 }
 
@@ -108,7 +108,8 @@ p, h1, h2, h3 { margin-top: 0; }
   left: 50%;
   transform: translate(-50%, -50%);
   width: min(500px, 55%);
-  opacity: 0.82;
+  opacity: 1;
+  mix-blend-mode: screen;
   pointer-events: none;
   z-index: 0;
   user-select: none;
@@ -135,7 +136,7 @@ p, h1, h2, h3 { margin-top: 0; }
 
 .eyebrow {
   margin-bottom: 0.85rem;
-  color: #1a6b22;
+  color: var(--green-bright);
   font-size: 0.82rem;
   font-weight: 850;
   letter-spacing: 0.08em;
@@ -144,14 +145,14 @@ p, h1, h2, h3 { margin-top: 0; }
 
 .hero h1 {
   margin-bottom: 0.7rem;
-  color: #0a1e2d;
+  color: #ffffff;
   font-size: clamp(3.5rem, 8vw, 6.6rem);
   line-height: 0.94;
 }
 
 .slogan {
   margin-bottom: 1.15rem;
-  color: #1a3a50;
+  color: rgba(232,237,242,0.9);
   font-size: clamp(1.45rem, 3vw, 2.25rem);
   font-weight: 780;
   line-height: 1.12;
@@ -159,7 +160,7 @@ p, h1, h2, h3 { margin-top: 0; }
 
 .hero-text {
   max-width: 42rem;
-  color: #4a5c6a;
+  color: rgba(183,194,204,0.9);
   font-size: clamp(1.04rem, 2vw, 1.22rem);
   line-height: 1.65;
 }
@@ -172,10 +173,10 @@ p, h1, h2, h3 { margin-top: 0; }
 }
 
 .hero-chips span {
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 999px;
-  background: #f0f4f7;
-  color: #2a4a5c;
+  background: rgba(255,255,255,0.08);
+  color: rgba(232,237,242,0.9);
   padding: 0.45rem 0.75rem;
   font-size: 0.9rem;
   font-weight: 760;
@@ -211,12 +212,12 @@ p, h1, h2, h3 { margin-top: 0; }
 .button.primary:hover { opacity: 0.88; }
 
 .button.secondary {
-  border: 1px solid rgba(0,0,0,0.15);
-  background: #f0f4f7;
-  color: #0a1e2d;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.9);
 }
 
-.button.secondary:hover { background: #e2e8ed; }
+.button.secondary:hover { background: rgba(255,255,255,0.14); }
 
 /* ── Hero visual ── */
 .hero-visual { display: flex; justify-content: center; }
@@ -517,6 +518,38 @@ p, h1, h2, h3 { margin-top: 0; }
   color: var(--green) !important;
 }
 
+/* ── App screenshot frame ── */
+.app-screenshot-frame {
+  position: relative;
+  width: min(22rem, 100%);
+  border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 40px;
+  background: #060b12;
+  padding: 2.2rem 0.6rem 0.6rem;
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.5),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.app-screenshot-notch {
+  position: absolute;
+  top: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+}
+
+.app-screenshot-img {
+  display: block;
+  width: 100%;
+  border-radius: 26px;
+  object-fit: cover;
+}
+
 /* ── Phone mockup ── */
 .phone-mockup { display: flex; justify-content: center; }
 
@@ -712,7 +745,7 @@ p, h1, h2, h3 { margin-top: 0; }
 .faq-item {
   border: 1px solid rgba(0,0,0,0.07);
   border-radius: var(--radius-lg);
-  background: #ffffff;
+  background: #060b12;
   overflow: hidden;
 }
 

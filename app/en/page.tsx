@@ -84,44 +84,13 @@ export default function EnHomePage() {
         </div>
 
         <div className="hero-visual" aria-label="AlpAI app preview">
-          <div className="phone-mockup" aria-hidden="true">
-            <div className="phone-frame">
-              <div className="phone-notch" />
-              <div className="phone-screen">
-                <div className="phone-app-bar">
-                  <span className="phone-app-name">AlpAI</span>
-                  <span className="phone-app-dot" />
-                </div>
-                <div className="phone-mountain-card">
-                  <div className="phone-mountain-bg">
-                    <div className="phone-sun" />
-                    <div className="phone-peak phone-peak-back" />
-                    <div className="phone-peak phone-peak-front" />
-                    <div className="phone-route-line" />
-                  </div>
-                  <div className="phone-route-label">
-                    <span>Triglav — 2864 m</span>
-                    <span className="phone-route-tag">Planned</span>
-                  </div>
-                </div>
-                <div className="phone-stats-row">
-                  <div className="phone-stat"><strong>8.2 km</strong><span>Distance</span></div>
-                  <div className="phone-stat"><strong>1420 m</strong><span>Elevation</span></div>
-                  <div className="phone-stat"><strong>5–6 h</strong><span>Duration</span></div>
-                </div>
-                <div className="phone-weather-card">
-                  <span className="phone-weather-icon">⛅</span>
-                  <div>
-                    <strong>Partly cloudy</strong>
-                    <span>Tomorrow 8°C · Wind 15 km/h</span>
-                  </div>
-                </div>
-                <div className="phone-ai-card">
-                  <span className="phone-ai-label">AI</span>
-                  <p>Conditions are suitable. Bring warm layers and waterproofs.</p>
-                </div>
-              </div>
-            </div>
+          <div className="app-screenshot-frame">
+            <div className="app-screenshot-notch" />
+            <img
+              src="/app-screenshot.png"
+              alt="AlpAI app — home screen"
+              className="app-screenshot-img"
+            />
           </div>
         </div>
       </section>

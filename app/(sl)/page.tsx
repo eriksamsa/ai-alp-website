@@ -84,7 +84,15 @@ export default function HomePage() {
         </div>
 
         <div className="hero-visual" aria-label="Predogled aplikacije AlpAI">
-          <div className="phone-mockup" aria-hidden="true">
+          <div className="app-screenshot-frame">
+            <div className="app-screenshot-notch" />
+            <img
+              src="/app-screenshot.png"
+              alt="AlpAI aplikacija — domača stran"
+              className="app-screenshot-img"
+            />
+          </div>
+          <div className="phone-mockup" aria-hidden="true" style={{display:'none'}}>
             <div className="phone-frame">
               <div className="phone-notch" />
               <div className="phone-screen">
