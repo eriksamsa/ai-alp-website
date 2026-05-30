@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import LanguageSwitcher from '../LanguageSwitcher';
-import MountainLogo from '../MountainLogo';
 import '../globals.css';
 
 const siteUrl = 'https://ai-alp.com';
@@ -17,8 +16,8 @@ export const metadata: Metadata = {
   applicationName: 'AlpAI',
   alternates: { canonical: '/en' },
   icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/alpai-logo.png' }],
-    apple: '/alpai-logo.png',
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/logo-alpai.png' }],
+    apple: '/logo-alpai.png',
   },
   openGraph: {
     type: 'website',
@@ -62,8 +61,7 @@ export default function EnLayout({ children }: Readonly<{ children: React.ReactN
       <body>
         <header className="site-header">
           <Link className="brand" href="/en">
-            <MountainLogo size={38} />
-            <span>AlpAI</span>
+            <img src="/logo-alpai.png" alt="alpAI" className="header-logo" />
           </Link>
           <nav className="site-nav" aria-label="Main navigation">
             {navItems.map((item) => (
