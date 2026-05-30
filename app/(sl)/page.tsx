@@ -1,201 +1,100 @@
 import Link from 'next/link';
 import WaitlistForm from '../WaitlistForm';
 import ScrollAnimate from '../ScrollAnimate';
-import MountainBackground from '../MountainBackground';
-import LogoWatermark from '../LogoWatermark';
 
 const features = [
   {
-    title: 'Načrtovanje ture',
-    text: 'Pregledna priprava cilja, časovnice, zahtevnosti in ključnih informacij pred odhodom.',
+    icon: '⛰️',
+    title: 'O aplikaciji',
+    text: 'alpAI združuje zanesljive podatke o vremenu, razmerah, varnosti in zemljevidih z močjo umetne inteligence, da lahko svoje gorske ture načrtuješ pametneje in z več zaupanja.',
   },
   {
-    title: 'Vreme in razmere',
-    text: 'Prostor za prihodnje vremenske podatke, opozorila in informacije o razmerah v gorah.',
+    icon: '👥',
+    title: 'Komu je namenjena',
+    text: 'Za pohodnike, alpiniste, gorske vodnike in vse ljubitelje narave, ki želijo bolje načrtovane, varnejše in bolj uživaške gorske izkušnje.',
   },
   {
-    title: 'Varnostni napotki',
-    text: 'Jasni opomniki za opremo, čas odhoda, tveganja in odgovorno odločanje na terenu.',
-  },
-  {
-    title: 'Slovenske gore in poti',
-    text: 'Zasnova za informacije o vrhovih, poteh in uporabnih podatkih za slovenski gorski prostor.',
-  },
-  {
-    title: 'Za domače planince in tuje obiskovalce',
-    text: 'Enostavna izkušnja za redne obiskovalce gora in ljudi, ki slovenske poti šele spoznavajo.',
-  },
-  {
-    title: 'AI pomočnik za pripravo na turo',
-    text: 'Načrtovan pomočnik za urejanje priprav, vprašanj pred turo in boljše razumevanje informacij.',
-  },
-];
-
-const faqs = [
-  {
-    q: 'Kdaj bo aplikacija na voljo?',
-    a: 'AlpAI je trenutno v aktivnem razvoju. Prijavite se na čakalni seznam in obvestili vas bomo takoj ob izidu.',
-  },
-  {
-    q: 'Bo na voljo za iOS in Android?',
-    a: 'Da — AlpAI se razvija hkrati za obe platformi, iOS in Android.',
-  },
-  {
-    q: 'Koliko bo stala aplikacija AlpAI?',
-    a: 'Cena še ni dokončno določena. Člani čakalnega seznama bodo med prvimi izvedeli za ponudbe ob lansiranju.',
-  },
-  {
-    q: 'Je namenjena samo slovenskim goram?',
-    a: 'Začetni fokus so slovenske gore in poti, s ciljem razširiti pokritost na celotni alpski prostor.',
-  },
-  {
-    q: 'Ali deluje brez interneta?',
-    a: 'Delovanje brez interneta je načrtovano za ključne funkcije. Podrobnosti bodo znane bližje lansiranju.',
+    icon: '✉️',
+    title: 'Kontakt',
+    text: 'Za vprašanja, predloge ali sodelovanje smo tu za vas.',
+    email: 'info@alpai.si',
   },
 ];
 
 export default function HomePage() {
   return (
     <>
+      {/* ── HERO ── */}
       <section className="hero">
-        <LogoWatermark className="hero-watermark" />
-        <MountainBackground />
+        <div className="hero-bg" />
+
+        <div className="hero-phones">
+          <div className="hero-phone hero-phone--back">
+            <div className="hero-phone-notch" />
+            <img src="/app-screenshot-2.png" alt="AlpAI vreme" className="hero-phone-img" />
+          </div>
+          <div className="hero-phone hero-phone--front">
+            <div className="hero-phone-notch" />
+            <img src="/app-screenshot.png" alt="AlpAI domača stran" className="hero-phone-img" />
+          </div>
+        </div>
+
         <div className="hero-copy">
-          <p className="eyebrow">Mobilna aplikacija za gore</p>
-          <h1>AlpAI</h1>
-          <p className="slogan">Tvoja pot do novih razgledov.</p>
+          <div className="hero-badge">
+            <span className="hero-badge-icon">⛰</span>
+            Premišljene odločitve. Nepozabni razgledi.
+          </div>
+          <h1 className="hero-heading">
+            <span className="hero-alp">alp</span><span className="hero-ai">AI</span>
+          </h1>
+          <h2 className="hero-sub">Pametnejše načrtovanje gorskih tur</h2>
           <p className="hero-text">
-            AlpAI pomaga pri načrtovanju gorskih tur, preverjanju razmer in varnejšem odločanju
-            pred odhodom v gore.
+            Načrtuj pametneje, pojdi varneje, razišni več.
+            Zanesljivo načrtovanje tur, natančno vreme in razmere,
+            varna priporočila ter AI pomočnik – vse v eni aplikaciji.
           </p>
-          <div className="hero-chips" aria-label="Ključne prednosti">
-            <span>AI priprava</span>
-            <span>Vreme</span>
-            <span>Varnost</span>
-          </div>
           <div className="hero-actions">
-            <a className="button primary" href="#availability">
-              Kmalu na voljo
+            <a className="button primary" href="#waitlist">
+              Preizkusi aplikacijo →
             </a>
-            <Link className="button secondary" href="/contact">
-              Kontakt
-            </Link>
-          </div>
-        </div>
-
-        <div className="hero-visual" aria-label="Predogled aplikacije AlpAI">
-          <div className="app-screenshot-frame">
-            <div className="app-screenshot-notch" />
-            <img
-              src="/app-screenshot.png"
-              alt="AlpAI aplikacija — domača stran"
-              className="app-screenshot-img"
-            />
-          </div>
-          <div className="phone-mockup" aria-hidden="true" style={{display:'none'}}>
-            <div className="phone-frame">
-              <div className="phone-notch" />
-              <div className="phone-screen">
-                <div className="phone-app-bar">
-                  <span className="phone-app-name">AlpAI</span>
-                  <span className="phone-app-dot" />
-                </div>
-                <div className="phone-mountain-card">
-                  <div className="phone-mountain-bg">
-                    <div className="phone-sun" />
-                    <div className="phone-peak phone-peak-back" />
-                    <div className="phone-peak phone-peak-front" />
-                    <div className="phone-route-line" />
-                  </div>
-                  <div className="phone-route-label">
-                    <span>Triglav — 2864 m</span>
-                    <span className="phone-route-tag">Načrtovano</span>
-                  </div>
-                </div>
-                <div className="phone-stats-row">
-                  <div className="phone-stat"><strong>8,2 km</strong><span>Razdalja</span></div>
-                  <div className="phone-stat"><strong>1420 m</strong><span>Vzpon</span></div>
-                  <div className="phone-stat"><strong>5–6 h</strong><span>Čas</span></div>
-                </div>
-                <div className="phone-weather-card">
-                  <span className="phone-weather-icon">⛅</span>
-                  <div>
-                    <strong>Delno oblačno</strong>
-                    <span>Jutri 8°C · Veter 15 km/h</span>
-                  </div>
-                </div>
-                <div className="phone-ai-card">
-                  <span className="phone-ai-label">AI</span>
-                  <p>Razmere so primerne. Priporoča se topla obleka in vodoodporna jakna.</p>
-                </div>
-              </div>
-            </div>
+            <a className="button hero-secondary" href="#features">
+              ▶ Oglej si predstavitev
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="availability" id="availability">
-        <div className="availability-badge">
-          <span className="status-dot" />
-          <strong>Kmalu na voljo</strong>
-        </div>
-        <div className="availability-right">
-          <p>Bodite med prvimi. Pustite email in vas obvestimo ob izidu.</p>
-          <WaitlistForm />
-        </div>
-      </section>
-
-      <section className="section">
-        <ScrollAnimate>
-          <div className="section-heading">
-            <p className="eyebrow">Funkcije</p>
-            <h2>Pametnejša priprava na gore, brez nepotrebne kompleksnosti.</h2>
-          </div>
-        </ScrollAnimate>
-
-        <div className="feature-grid">
-          {features.map((feature, i) => (
-            <ScrollAnimate key={feature.title} delay={i * 60}>
-              <article className="feature-card feature-card--full">
-                <h3>{feature.title}</h3>
-                <p>{feature.text}</p>
+      {/* ── FEATURES ── */}
+      <section className="features-section" id="features">
+        <div className="features-grid">
+          {features.map((f, i) => (
+            <ScrollAnimate key={f.title} delay={i * 80}>
+              <article className="feature-dark-card">
+                <span className="feature-dark-icon">{f.icon}</span>
+                <h3>{f.title}</h3>
+                <p>{f.text}</p>
+                {f.email && (
+                  <a href={`mailto:${f.email}`} className="feature-email">{f.email}</a>
+                )}
               </article>
             </ScrollAnimate>
           ))}
         </div>
       </section>
 
-      <section className="split-section">
-        <ScrollAnimate>
-          <div>
-            <p className="eyebrow">Zaupanje in varnost</p>
-            <h2>Tehnologija kot podpora, ne nadomestilo presoje.</h2>
+      {/* ── WAITLIST ── */}
+      <section className="waitlist-section" id="waitlist">
+        <div className="waitlist-inner">
+          <div className="waitlist-left">
+            <span className="waitlist-bell">🔔</span>
+            <div>
+              <strong>Kmalu na voljo za iOS in Android</strong>
+              <p>Pridruži se čakalni listi in bodi med prvimi obveščen.</p>
+            </div>
           </div>
-        </ScrollAnimate>
-        <ScrollAnimate delay={100}>
-          <p>
-            AlpAI je zasnovan kot zanesljiv informativni pripomoček za boljšo pripravo na turo.
-            Končne odločitve v gorah vedno ostanejo odgovornost uporabnika.
-          </p>
-        </ScrollAnimate>
-      </section>
-
-      <section className="section faq-section">
-        <ScrollAnimate>
-          <div className="section-heading">
-            <p className="eyebrow">Pogosta vprašanja</p>
-            <h2>Vse kar želite vedeti o AlpAI.</h2>
+          <div className="waitlist-right">
+            <WaitlistForm />
           </div>
-        </ScrollAnimate>
-        <div className="faq-list">
-          {faqs.map((faq, i) => (
-            <ScrollAnimate key={faq.q} delay={i * 60}>
-              <details className="faq-item">
-                <summary className="faq-question">{faq.q}</summary>
-                <p className="faq-answer">{faq.a}</p>
-              </details>
-            </ScrollAnimate>
-          ))}
         </div>
       </section>
     </>

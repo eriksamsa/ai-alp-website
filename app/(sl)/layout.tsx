@@ -45,6 +45,7 @@ export const viewport: Viewport = {
 
 const navItems = [
   { href: '/', label: 'Domov' },
+  { href: '/#features', label: 'O aplikaciji' },
   { href: '/privacy-policy', label: 'Zasebnost' },
   { href: '/terms', label: 'Pogoji' },
   { href: '/contact', label: 'Kontakt' },
@@ -68,6 +69,7 @@ export default function SlLayout({ children }: Readonly<{ children: React.ReactN
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
             <LanguageSwitcher />
+            <a href="#waitlist" className="nav-cta">Preizkusi aplikacijo →</a>
           </nav>
         </header>
 
