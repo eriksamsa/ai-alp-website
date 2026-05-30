@@ -244,6 +244,14 @@ p, h1, h2, h3 { margin-top: 0; }
   background-clip: text;
 }
 
+.hero-logo {
+  width: min(560px, 95%);
+  height: auto;
+  display: block;
+  margin-bottom: 0.25rem;
+  filter: saturate(1.4) brightness(1.15) contrast(1.1);
+}
+
 .hero-sub {
   font-size: clamp(1.4rem, 3vw, 2.1rem);
   font-weight: 700;
