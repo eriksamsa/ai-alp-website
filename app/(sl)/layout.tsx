@@ -45,7 +45,7 @@ export const viewport: Viewport = {
 
 const navItems = [
   { href: '/', label: 'Domov' },
-  { href: '/#features', label: 'O aplikaciji' },
+  { href: '/o-aplikaciji', label: 'O aplikaciji' },
   { href: '/privacy-policy', label: 'Zasebnost' },
   { href: '/terms', label: 'Pogoji' },
   { href: '/contact', label: 'Kontakt' },
