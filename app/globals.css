@@ -251,7 +251,7 @@ p, h1, h2, h3 { margin-top: 0; }
   width: min(560px, 95%);
   height: auto;
   display: block;
-  margin-bottom: -4rem;
+  margin-bottom: 0.75rem;
   filter: saturate(1.4) brightness(1.15) contrast(1.1);
   align-self: center;
 }

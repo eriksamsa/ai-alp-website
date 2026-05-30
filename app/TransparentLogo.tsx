@@ -45,12 +45,38 @@ export default function TransparentLogo({ src, alt, className }: Props) {
         if (diff < 55) {
           d[i+3] = 0;
         } else if (diff < 90) {
-          // Soft edge: partial transparency
           d[i+3] = Math.round((diff - 55) / 35 * 255);
         }
       }
 
       ctx.putImageData(imageData, 0, 0);
+
+      // Find bounding box of non-transparent pixels and crop canvas
+      let minY = canvas.height, maxY = 0;
+      for (let y = 0; y < canvas.height; y++) {
+        for (let x = 0; x < canvas.width; x++) {
+          const alpha = d[(y * canvas.width + x) * 4 + 3];
+          if (alpha > 10) {
+            if (y < minY) minY = y;
+            if (y > maxY) maxY = y;
+          }
+        }
+      }
+
+      // Crop: create new canvas with just the content area
+      const padding = 8;
+      const cropTop = Math.max(0, minY - padding);
+      const cropBottom = Math.min(canvas.height, maxY + padding);
+      const cropHeight = cropBottom - cropTop;
+
+      const cropped = document.createElement('canvas');
+      cropped.width = canvas.width;
+      cropped.height = cropHeight;
+      const cCtx = cropped.getContext('2d')!;
+      cCtx.drawImage(canvas, 0, cropTop, canvas.width, cropHeight, 0, 0, canvas.width, cropHeight);
+
+      canvas.height = cropHeight;
+      ctx.drawImage(cropped, 0, 0);
     };
 
     img.src = src;
