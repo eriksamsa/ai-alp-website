@@ -1,13 +1,6 @@
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import WaitlistForm from '../WaitlistForm';
 import ScrollAnimate from '../ScrollAnimate';
-
-export const metadata: Metadata = {
-  title: 'AlpAI | Smarter Mountain Tour Planning',
-  description:
-    'AlpAI is a mobile app for planning mountain hikes, checking conditions, and making safer decisions before heading into the mountains.',
-};
 
 const features = [
   {
@@ -136,7 +129,7 @@ export default function EnHomePage() {
         </div>
         <div className="availability-right">
           <p>Be among the first. Leave your email and we will notify you at launch.</p>
-          <WaitlistForm />
+          <WaitlistForm lang="en" />
         </div>
       </section>
 

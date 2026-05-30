@@ -101,7 +101,7 @@ export default function EnLayout({ children }: Readonly<{ children: React.ReactN
                 {item.label}
               </Link>
             ))}
-            <Link href="/press">Press</Link>
+            <Link href="/en/press">Press</Link>
           </nav>
         </footer>
       </body>

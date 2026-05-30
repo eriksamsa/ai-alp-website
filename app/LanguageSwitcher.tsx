@@ -7,15 +7,12 @@ export default function LanguageSwitcher() {
   const path = usePathname();
   const isEn = path.startsWith('/en');
 
-  const slHref = isEn ? path.replace(/^\/en/, '') || '/' : path;
-  const enHref = isEn ? path : `/en${path === '/' ? '' : path}`;
-
   return (
-    <div className="lang-switcher" aria-label="Izbira jezika">
+    <div className="lang-switcher" aria-label="Izbira jezika / Language">
       {isEn ? (
-        <Link href={slHref} className="lang-btn">SL</Link>
+        <Link href="/" className="lang-btn">SL</Link>
       ) : (
-        <Link href={enHref} className="lang-btn">EN</Link>
+        <Link href="/en" className="lang-btn">EN</Link>
       )}
     </div>
   );

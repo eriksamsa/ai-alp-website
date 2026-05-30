@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const baseUrl = 'https://ai-alp.com';
 
-const routes = ['/', '/contact', '/privacy-policy', '/terms', '/press', '/en'];
+const routes = ['/', '/contact', '/privacy-policy', '/terms', '/press', '/en', '/en/press'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((path) => ({
