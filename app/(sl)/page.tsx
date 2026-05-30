@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import WaitlistForm from './WaitlistForm';
-import ScrollAnimate from './ScrollAnimate';
+import WaitlistForm from '../WaitlistForm';
+import ScrollAnimate from '../ScrollAnimate';
 
 const features = [
   {

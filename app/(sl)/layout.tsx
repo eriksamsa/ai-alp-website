@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
-import LanguageSwitcher from './LanguageSwitcher';
-import './globals.css';
+import LanguageSwitcher from '../LanguageSwitcher';
+import '../globals.css';
 
 const siteUrl = 'https://ai-alp.com';
 
@@ -55,7 +55,7 @@ const socialLinks = [
   { href: 'https://tiktok.com/@alpai.app', label: 'TikTok', icon: 'TT' },
 ];
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function SlLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="sl">
       <body>
@@ -64,12 +64,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <img className="brand-icon" src="/alpai-logo.png" alt="" aria-hidden="true" />
             <span>AlpAI</span>
           </Link>
-
           <nav className="site-nav" aria-label="Glavna navigacija">
             {navItems.map((item) => (
-              <Link href={item.href} key={item.href}>
-                {item.label}
-              </Link>
+              <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
             <LanguageSwitcher />
           </nav>
@@ -83,24 +80,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <p>Tvoja pot do novih razgledov.</p>
             <div className="footer-social">
               {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="social-btn"
-                >
-                  {s.icon}
-                </a>
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                  aria-label={s.label} className="social-btn">{s.icon}</a>
               ))}
             </div>
           </div>
           <nav aria-label="Povezave v nogi" className="footer-nav">
             {navItems.map((item) => (
-              <Link href={item.href} key={item.href}>
-                {item.label}
-              </Link>
+              <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
             <Link href="/press">Za medije</Link>
           </nav>
