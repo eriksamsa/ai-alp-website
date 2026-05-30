@@ -15,7 +15,7 @@ export default function OgImage() {
           justifyContent: 'center',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #071626 0%, #102b42 60%, #16704a 160%)',
+          background: 'linear-gradient(135deg, #0c2d56 0%, #1a4f8a 60%, #0e3d72 100%)',
           padding: '72px 80px',
           fontFamily: 'sans-serif',
         }}
