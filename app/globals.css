@@ -225,6 +225,14 @@ p, h1, h2, h3 { margin-top: 0; }
 .hero-alp { color: #ffffff; }
 .hero-ai  { color: var(--green); }
 
+.hero-logo {
+  width: min(420px, 90%);
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+  mix-blend-mode: screen;
+}
+
 .hero-sub {
   font-size: clamp(1.4rem, 3vw, 2.1rem);
   font-weight: 700;
