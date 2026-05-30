@@ -211,7 +211,7 @@ p, h1, h2, h3 { margin-top: 0; }
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text);
-  margin-top: -0.5rem;
+  margin-top: 0;
   margin-bottom: 1.4rem;
 }
 
@@ -251,7 +251,7 @@ p, h1, h2, h3 { margin-top: 0; }
   width: min(560px, 95%);
   height: auto;
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: -4rem;
   filter: saturate(1.4) brightness(1.15) contrast(1.1);
   align-self: center;
 }
