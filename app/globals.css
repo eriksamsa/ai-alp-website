@@ -50,28 +50,22 @@ p, h1, h2, h3 { margin-top: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 0.75rem clamp(1rem, 4vw, 3rem);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background: rgba(6,11,18,0.88);
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  background: rgba(255,255,255,0.97);
   backdrop-filter: blur(20px);
-  
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 1.15rem;
-  white-space: nowrap;
 }
 
 .header-logo {
-  height: 4.5rem;
+  height: 4rem;
   width: auto;
   display: block;
-  /* the logo has dark padding that blends with the dark header */
 }
 
 .site-nav,
@@ -86,13 +80,13 @@ p, h1, h2, h3 { margin-top: 0; }
 .site-footer a {
   padding: 0.55rem 0.75rem;
   border-radius: var(--radius);
-  color: rgba(255,255,255,0.78);
+  color: #4a5c6a;
   font-size: 0.94rem;
   font-weight: 700;
   transition: background 0.15s, color 0.15s;
 }
 
-.site-nav a:hover { background: rgba(101,217,108,0.14); color: var(--green); }
+.site-nav a:hover { background: rgba(101,217,108,0.12); color: #2a7a30; }
 .site-footer a:hover { background: #f0f4f7; color: #0a1e2d; }
 
 /* ── Hero ── */
@@ -494,10 +488,10 @@ p, h1, h2, h3 { margin-top: 0; }
   justify-content: center;
   height: 2rem;
   padding: 0 0.65rem;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: var(--radius);
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.82) !important;
+  background: #f0f4f7;
+  color: #4a5c6a !important;
   font-size: 0.82rem;
   font-weight: 850;
   letter-spacing: 0.06em;
@@ -505,9 +499,9 @@ p, h1, h2, h3 { margin-top: 0; }
 }
 
 .lang-btn:hover {
-  background: rgba(101,217,108,0.14) !important;
+  background: rgba(101,217,108,0.12) !important;
   border-color: var(--green);
-  color: var(--green) !important;
+  color: #2a7a30 !important;
 }
 
 /* ── Phone mockup ── */
