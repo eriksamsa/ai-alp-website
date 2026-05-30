@@ -15,7 +15,7 @@ export default function OgImage() {
           justifyContent: 'center',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #0c2d56 0%, #1a4f8a 60%, #0e3d72 100%)',
+          background: 'linear-gradient(135deg, #060B12 0%, #0d1f30 60%, #060B12 100%)',
           padding: '72px 80px',
           fontFamily: 'sans-serif',
         }}
@@ -59,11 +59,11 @@ export default function OgImage() {
                 width: 28,
                 height: 28,
                 borderRadius: '50%',
-                background: '#9fe6bc',
+                background: '#65D96C',
               }}
             />
           </div>
-          <span style={{ color: '#9fe6bc', fontSize: 28, fontWeight: 800, letterSpacing: 2 }}>
+          <span style={{ color: '#65D96C', fontSize: 28, fontWeight: 800, letterSpacing: 2 }}>
             AlpAI
           </span>
         </div>
