@@ -57,6 +57,7 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
+        <img src="/logo-alpai.png" alt="" className="hero-watermark" aria-hidden="true" />
         <MountainBackground />
         <div className="hero-copy">
           <p className="eyebrow">Mobilna aplikacija za gore</p>

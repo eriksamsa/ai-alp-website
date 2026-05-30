@@ -96,9 +96,22 @@ p, h1, h2, h3 { margin-top: 0; }
   align-items: center;
   gap: clamp(2rem, 5vw, 5rem);
   min-height: calc(100vh - 52px);
-  padding: clamp(3rem, 8vw, 6.5rem) clamp(1rem, 5vw, 5rem) 0;
-  background: var(--bg);
+  padding: clamp(3rem, 8vw, 6.5rem) clamp(1rem, 5vw, 5rem) clamp(2.5rem, 5vw, 4rem);
+  background: #ffffff;
   overflow: hidden;
+}
+
+/* Prosojni logo vodotisk v sredini */
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, 60%);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
 }
 
 .mountain-bg-svg {
@@ -106,9 +119,10 @@ p, h1, h2, h3 { margin-top: 0; }
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 45%;
+  height: 35%;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.5;
 }
 
 .hero-copy,
@@ -121,7 +135,7 @@ p, h1, h2, h3 { margin-top: 0; }
 
 .eyebrow {
   margin-bottom: 0.85rem;
-  color: var(--green-bright);
+  color: #1a6b22;
   font-size: 0.82rem;
   font-weight: 850;
   letter-spacing: 0.08em;
@@ -130,14 +144,14 @@ p, h1, h2, h3 { margin-top: 0; }
 
 .hero h1 {
   margin-bottom: 0.7rem;
-  color: var(--white);
+  color: #0a1e2d;
   font-size: clamp(3.5rem, 8vw, 6.6rem);
   line-height: 0.94;
 }
 
 .slogan {
   margin-bottom: 1.15rem;
-  color: rgba(232,237,242,0.9);
+  color: #1a3a50;
   font-size: clamp(1.45rem, 3vw, 2.25rem);
   font-weight: 780;
   line-height: 1.12;
@@ -145,7 +159,7 @@ p, h1, h2, h3 { margin-top: 0; }
 
 .hero-text {
   max-width: 42rem;
-  color: rgba(183,194,204,0.9);
+  color: #4a5c6a;
   font-size: clamp(1.04rem, 2vw, 1.22rem);
   line-height: 1.65;
 }
@@ -158,10 +172,10 @@ p, h1, h2, h3 { margin-top: 0; }
 }
 
 .hero-chips span {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 999px;
-  background: var(--surface-hi);
-  color: var(--text);
+  background: #f0f4f7;
+  color: #2a4a5c;
   padding: 0.45rem 0.75rem;
   font-size: 0.9rem;
   font-weight: 760;
@@ -197,12 +211,12 @@ p, h1, h2, h3 { margin-top: 0; }
 .button.primary:hover { opacity: 0.88; }
 
 .button.secondary {
-  border: 1px solid var(--border);
-  background: var(--surface-hi);
-  color: var(--text);
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #f0f4f7;
+  color: #0a1e2d;
 }
 
-.button.secondary:hover { background: var(--surface-2); }
+.button.secondary:hover { background: #e2e8ed; }
 
 /* ── Hero visual ── */
 .hero-visual { display: flex; justify-content: center; }

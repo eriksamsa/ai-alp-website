@@ -57,6 +57,7 @@ export default function EnHomePage() {
   return (
     <>
       <section className="hero">
+        <img src="/logo-alpai.png" alt="" className="hero-watermark" aria-hidden="true" />
         <MountainBackground />
         <div className="hero-copy">
           <p className="eyebrow">Mobile app for the mountains</p>
