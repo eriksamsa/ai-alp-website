@@ -6,7 +6,7 @@ export default function LogoWatermark({ className }: Props) {
   return (
     <svg
       className={className}
-      viewBox="0 0 500 310"
+      viewBox="0 0 500 230"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
@@ -19,15 +19,6 @@ export default function LogoWatermark({ className }: Props) {
         <linearGradient id="wm-peakSide" x1="50%" y1="0%" x2="50%" y2="100%">
           <stop offset="0%" stopColor="#4a90d0" />
           <stop offset="100%" stopColor="#0a2a6a" />
-        </linearGradient>
-        <linearGradient id="wm-alpText" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#4a9ad8" />
-          <stop offset="55%" stopColor="#2a70c0" />
-          <stop offset="100%" stopColor="#1a4a9a" />
-        </linearGradient>
-        <linearGradient id="wm-aiText" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#4ad84a" />
-          <stop offset="100%" stopColor="#1a8a1a" />
         </linearGradient>
         <linearGradient id="wm-swooshBlue" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#2878d0" />
@@ -62,10 +53,6 @@ export default function LogoWatermark({ className }: Props) {
       {/* Swooshes */}
       <path d="M 65 215 Q 250 192 435 215" stroke="url(#wm-swooshBlue)" strokeWidth="5" fill="none" strokeLinecap="round" />
       <path d="M 235 220 Q 335 205 435 215" stroke="url(#wm-swooshGreen)" strokeWidth="5" fill="none" strokeLinecap="round" />
-
-      {/* Text */}
-      <text x="62" y="295" fontFamily="'Arial Black', 'Inter', sans-serif" fontSize="80" fontWeight="900" fill="url(#wm-alpText)">alp</text>
-      <text x="268" y="295" fontFamily="'Arial Black', 'Inter', sans-serif" fontSize="80" fontWeight="900" fill="url(#wm-aiText)">AI</text>
     </svg>
   );
 }
