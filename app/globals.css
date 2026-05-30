@@ -222,14 +222,26 @@ p, h1, h2, h3 { margin-top: 0; }
   letter-spacing: -1px;
 }
 
-.hero-alp { color: #ffffff; }
-.hero-ai  { color: var(--green); }
+.hero-heading {
+  font-size: clamp(5rem, 12vw, 9rem);
+  font-weight: 900;
+  line-height: 1;
+  margin: 0 0 0.5rem;
+  letter-spacing: -2px;
+}
 
-.hero-logo {
-  width: min(420px, 90%);
-  height: auto;
-  display: block;
-  margin-bottom: 0.5rem;
+.hero-alp {
+  background: linear-gradient(180deg, #ffffff 0%, #a8d4f8 60%, #7ab8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-ai {
+  background: linear-gradient(180deg, #7ef87e 0%, #28d828 60%, #1aaa1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-sub {

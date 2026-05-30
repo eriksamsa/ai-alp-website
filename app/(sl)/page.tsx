@@ -45,7 +45,9 @@ export default function HomePage() {
             <span className="hero-badge-icon">⛰</span>
             Premišljene odločitve. Nepozabni razgledi.
           </div>
-          <TransparentLogo src="/logo-alpai.png" alt="alpAI" className="hero-logo" />
+          <h1 className="hero-heading">
+            <span className="hero-alp">alp</span><span className="hero-ai">AI</span>
+          </h1>
           <h2 className="hero-sub">Pametnejše načrtovanje gorskih tur</h2>
           <p className="hero-text">
             Načrtuj pametneje, pojdi varneje, razišni več.
