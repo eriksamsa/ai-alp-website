@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import WaitlistForm from '../WaitlistForm';
 import ScrollAnimate from '../ScrollAnimate';
+import MountainBackground from '../MountainBackground';
 
 const features = [
   {
@@ -56,6 +57,7 @@ export default function EnHomePage() {
   return (
     <>
       <section className="hero">
+        <MountainBackground />
         <div className="hero-copy">
           <p className="eyebrow">Mobile app for the mountains</p>
           <h1>AlpAI</h1>

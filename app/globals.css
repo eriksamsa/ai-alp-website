@@ -91,16 +91,31 @@ p, h1, h2, h3 { margin-top: 0; }
 
 /* ── Hero ── */
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.75fr);
   align-items: center;
   gap: clamp(2rem, 5vw, 5rem);
-  min-height: calc(100vh - 74px);
-  padding: clamp(3rem, 8vw, 6.5rem) clamp(1rem, 5vw, 5rem) clamp(2.5rem, 6vw, 5rem);
-  background:
-    radial-gradient(circle at 80% 15%, rgba(101,217,108,0.1), transparent 30rem),
-    radial-gradient(circle at 5% 85%, rgba(99,211,255,0.08), transparent 25rem),
-    var(--bg);
+  min-height: calc(100vh - 52px);
+  padding: clamp(3rem, 8vw, 6.5rem) clamp(1rem, 5vw, 5rem) 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.mountain-bg-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-copy,
+.hero-visual {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-copy { max-width: 48rem; }
