@@ -41,11 +41,11 @@ export default function HomePage() {
         </div>
 
         <div className="hero-copy">
+          <TransparentLogo src="/logo-alpai.png" alt="alpAI" className="hero-logo" />
           <div className="hero-badge">
             <span className="hero-badge-icon">⛰</span>
             Premišljene odločitve. Nepozabni razgledi.
           </div>
-          <TransparentLogo src="/logo-alpai.png" alt="alpAI" className="hero-logo" />
           <h2 className="hero-sub">Pametnejše načrtovanje gorskih tur</h2>
           <p className="hero-text">
             Načrtuj pametneje, pojdi varneje, razišni več.
