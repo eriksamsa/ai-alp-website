@@ -12,13 +12,13 @@ const features = [
   {
     icon: '👥',
     title: 'Komu je namenjena',
-    text: 'Za pohodnike, alpiniste, gorske vodnike in vse ljubitelje narave, ki želijo bolje načrtovane, varnejše in bolj uživaške gorske izkušnje.',
+    text: 'Za pohodnike, alpiniste, gorske vodnike in vse ljubitelje narave, ki želijo bolje načrtovane, varnejše in prijetnejše gorske izkušnje.',
   },
   {
     icon: '✉️',
     title: 'Kontakt',
     text: 'Za vprašanja, predloge ali sodelovanje smo tu za vas.',
-    email: 'info@alpai.si',
+    email: 'info@ai-alp.com',
   },
 ];
 
@@ -48,7 +48,7 @@ export default function HomePage() {
           </div>
           <h2 className="hero-sub">Pametnejše načrtovanje gorskih tur</h2>
           <p className="hero-text">
-            Načrtuj pametneje, pojdi varneje, razišni več.
+            Načrtuj pametneje, pojdi varneje, razišči več.
             Zanesljivo načrtovanje tur, natančno vreme in razmere,
             varna priporočila ter AI pomočnik – vse v eni aplikaciji.
           </p>
