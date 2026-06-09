@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Avto — Rabljena vozila in rezervni deli | Vransko</title>
+<style>
+  :root{
+    --bg:#0e1117; --bg2:#161b24; --card:#1c2230; --line:#2a3242;
+    --txt:#e8ecf3; --mut:#9aa6b8; --red:#e23838; --red2:#ff4d4d;
+    --accent:#ffb020; --ok:#2ecc71;
+    --rad:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    font-synthesis:none;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+
+  /* TOPBAR */
+  .topbar{background:#0a0d13;font-size:13px;color:var(--mut);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px;flex-wrap:wrap}
+  .topbar a:hover{color:var(--txt)}
+  .topbar .right{display:flex;gap:18px}
+
+  /* HEADER */
+  header{background:linear-gradient(180deg,#141925,#0e1117);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px;letter-spacing:.5px}
+  .logo .mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--red),#9c1414);display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow)}
+  .logo span.sub{color:var(--red2)}
+  nav.menu{display:flex;gap:26px;font-weight:600;font-size:15px}
+  nav.menu a{color:var(--mut);padding:6px 0;border-bottom:2px solid transparent}
+  nav.menu a:hover,nav.menu a.active{color:var(--txt);border-color:var(--red)}
+  .cart{display:flex;align-items:center;gap:18px}
+  .btn{background:var(--red);color:#fff;border:none;padding:11px 20px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;transition:.15s}
+  .btn:hover{background:var(--red2);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+  .btn.ghost:hover{border-color:var(--red);background:transparent}
+  .cart-ico{position:relative;font-size:22px}
+  .cart-ico b{position:absolute;top:-8px;right:-10px;background:var(--accent);color:#000;font-size:11px;border-radius:20px;padding:1px 6px}
+
+  /* HERO */
+  .hero{position:relative;padding:64px 0 54px;background:
+     radial-gradient(900px 360px at 80% -10%,rgba(226,56,56,.25),transparent),
+     radial-gradient(700px 300px at 0% 120%,rgba(255,176,32,.12),transparent),#0e1117}
+  .hero h1{font-size:46px;line-height:1.1;font-weight:800;max-width:640px}
+  .hero h1 em{color:var(--red2);font-style:normal}
+  .hero p{color:var(--mut);font-size:18px;margin:18px 0 26px;max-width:560px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .stats{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap}
+  .stats div b{display:block;font-size:30px;color:var(--accent)}
+  .stats div span{color:var(--mut);font-size:14px}
+
+  /* QUICK SEARCH BAR */
+  .qsearch{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);box-shadow:var(--shadow);padding:18px;margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr) auto;gap:12px;align-items:end}
+  .qsearch .f label{display:block;font-size:12px;color:var(--mut);margin-bottom:6px;font-weight:600}
+  .qsearch select,.qsearch input{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:14px}
+
+  /* SECTION */
+  section{padding:56px 0}
+  .shead{display:flex;justify-content:space-between;align-items:end;margin-bottom:26px}
+  .shead h2{font-size:30px;font-weight:800}
+  .shead p{color:var(--mut);margin-top:6px}
+  .shead .tag{color:var(--red2);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:13px}
+
+  /* CAR GRID */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ccard{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;transition:.18s;display:flex;flex-direction:column}
+  .ccard:hover{transform:translateY(-4px);border-color:var(--red);box-shadow:var(--shadow)}
+  .photo{height:180px;position:relative;display:grid;place-items:center;overflow:hidden}
+  .photo svg{width:100%;height:100%}
+  .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px}
+  .badge.ok{background:var(--ok);color:#04210f}
+  .badge.warn{background:var(--accent);color:#000}
+  .fav{position:absolute;top:10px;right:12px;font-size:20px;opacity:.7;cursor:pointer}
+  .cbody{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .cbody h3{font-size:18px;font-weight:700}
+  .specs{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--mut)}
+  .specs span{background:var(--bg2);border:1px solid var(--line);padding:3px 9px;border-radius:7px}
+  .price{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+  .price b{font-size:24px;color:var(--accent)}
+  .price small{color:var(--mut);font-size:12px;display:block;font-weight:400}
+  .cbtns{display:flex;gap:8px}
+  .cbtns .btn{flex:1;padding:9px;font-size:13px}
+
+  /* SPARE PARTS FORM */
+  .parts{background:linear-gradient(180deg,#161b24,#10141d)}
+  .formcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--shadow)}
+  .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:13px;color:var(--mut);font-weight:600}
+  .field label .req{color:var(--red2)}
+  .field input,.field select,.field textarea{background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:11px 12px;font-size:14px;font-family:inherit}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+  .full{grid-column:1/-1}
+  .formfoot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;flex-wrap:wrap;gap:14px}
+  .formfoot .note{color:var(--mut);font-size:13px;max-width:520px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .chip{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:13px;cursor:pointer}
+  .chip.on{background:var(--red);border-color:var(--red);color:#fff}
+
+  /* STEPS / how online order works */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px;text-align:center}
+  .step .n{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--red),#9c1414);display:grid;place-items:center;margin:0 auto 14px;font-weight:800;font-size:20px}
+  .step h4{font-size:16px;margin-bottom:6px}
+  .step p{color:var(--mut);font-size:13px}
+
+  /* TRUST */
+  .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .trust .t{display:flex;gap:14px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:var(--rad);padding:18px}
+  .trust .t .i{font-size:26px}
+  .trust .t b{display:block;margin-bottom:3px}
+  .trust .t span{color:var(--mut);font-size:13px}
+
+  /* FOOTER */
+  footer{background:#0a0d13;border-top:1px solid var(--line);padding:48px 0 26px;color:var(--mut)}
+  .fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:34px}
+  footer h5{color:var(--txt);font-size:15px;margin-bottom:14px}
+  footer a{display:block;padding:4px 0;font-size:14px}
+  footer a:hover{color:var(--txt)}
+  .fbtm{border-top:1px solid var(--line);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+
+  @media(max-width:980px){
+    .grid,.fgrid,.steps,.trust,.fcols{grid-template-columns:1fr 1fr}
+    .qsearch{grid-template-columns:1fr 1fr}
+    .nav nav.menu{display:none}
+  }
+  @media(max-width:620px){
+    .grid,.fgrid,.steps,.trust,.fcols,.qsearch{grid-template-columns:1fr}
+    .hero h1{font-size:34px}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div>📍 Vransko 57, 3305 Vransko &nbsp;·&nbsp; ⏰ Pon–Pet 8:00–17:00, Sob 8:00–12:00</div>
+    <div class="right">
+      <a href="tel:070999990">📞 070 999 990</a>
+      <a href="mailto:avtofestajn@gmail.com">✉️ avtofestajn@gmail.com</a>
+      <a href="#">🇸🇮 SLO</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">
+      <span class="mark">🚗</span> GLOBAL <span class="sub">AVTO</span>
+    </a>
+    <nav class="menu">
+      <a href="#zaloga" class="active">Rabljena vozila</a>
+      <a href="#deli">Rezervni deli</a>
+      <a href="#kako">Kako naročim</a>
+      <a href="#odkup">Odkup vozil</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="cart">
+      <a href="#" class="cart-ico">🛒<b>2</b></a>
+      <a href="#deli" class="btn">Povpraševanje</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <h1>Rabljena vozila in <em>rezervni deli</em> z zaloge — naročite po spletu</h1>
+    <p>Več kot 10 let izkušenj z razgradnjo vozil in prodajo preverjenih rabljenih delov.
+       Poiščite vozilo na zalogi ali oddajte povpraševanje za del po znamki, modelu in letniku.</p>
+    <div class="cta">
+      <a href="#zaloga" class="btn">Poglej vozila na zalogi →</a>
+      <a href="#deli" class="btn ghost">Povpraševanje za rezervni del</a>
+    </div>
+
+    <div class="stats">
+      <div><b>120+</b><span>vozil na zalogi</span></div>
+      <div><b>15.000+</b><span>rabljenih delov</span></div>
+      <div><b>24h</b><span>odziv na povpraševanje</span></div>
+      <div><b>30 dni</b><span>garancija na dele</span></div>
+    </div>
+
+    <!-- QUICK SEARCH -->
+    <div class="qsearch">
+      <div class="f"><label>Znamka</label>
+        <select><option>Vse znamke</option><option>Volkswagen</option><option>Audi</option><option>BMW</option><option>Renault</option><option>Škoda</option><option>Opel</option></select></div>
+      <div class="f"><label>Model</label>
+        <select><option>Vsi modeli</option><option>Golf</option><option>Passat</option><option>A4</option><option>Clio</option></select></div>
+      <div class="f"><label>Letnik od</label>
+        <select><option>—</option><option>2010</option><option>2015</option><option>2018</option><option>2020</option></select></div>
+      <div class="f"><label>Cena do (€)</label>
+        <input type="number" placeholder="npr. 8.000"></div>
+      <div class="f"><label>Gorivo</label>
+        <select><option>Vse</option><option>Bencin</option><option>Diesel</option><option>Hibrid</option><option>Električni</option></select></div>
+      <button class="btn" style="height:42px">🔍 Išči</button>
+    </div>
+  </div>
+</div>
+
+<!-- CARS IN STOCK -->
+<section id="zaloga">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <div class="tag">Zaloga</div>
+        <h2>Rabljena vozila na zalogi</h2>
+        <p>Vsa vozila so na voljo za ogled, testno vožnjo in spletni nakup z dostavo po Sloveniji.</p>
+      </div>
+      <a href="#" class="btn ghost">Vsa vozila (120) →</a>
+    </div>
+
+    <div class="grid">
+      <!-- CAR 1 -->
+      <article class="ccard">
+        <div class="photo" style="background:linear-gradient(135deg,#2b3445,#1a2030)">
+          <span class="badge ok">Na zalogi</span><span class="fav">♡</span>
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="180" fill="#222a38"/>
+            <path d="M40 120 q15-42 55-44 h70 q30 0 45 30 l30 6 q15 4 15 16 v6 h-30 a16 16 0 0 0-32 0 H110 a16 16 0 0 0-32 0 H44 a8 8 0 0 1-8-8 v-20 z" stroke="#7d8aa0" stroke-width="2" style="fill:#586478"/>
+            <circle cx="94" cy="134" r="16" fill="#11151d"/><circle cx="222" cy="134" r="16" fill="#11151d"/>
+            <path d="M100 78 q8-22 40-22 h45 q18 0 27 20 z" fill="#9fb0c8" opacity=".5"/></svg>
+        </div>
+        <div class="cbody">
+          <h3>Volkswagen Golf 7 1.6 TDI</h3>
+          <div class="specs"><span>2017</span><span>142.000 km</span><span>Diesel</span><span>Avtomatik</span><span>110 kW</span></div>
+          <div class="price">
+            <div><small>Cena z DDV</small><b>11.490 €</b></div>
+            <div class="cbtns"><a href="#" class="btn ghost">Podrobno</a><a href="#" class="btn">Naroči</a></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAR 2 -->
+      <article class="ccard">
+        <div class="photo" style="background:linear-gradient(135deg,#3a2b2b,#241a1a)">
+          <span class="badge warn">Rezervirano</span><span class="fav">♡</span>
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="180" fill="#2a2230"/>
+            <path d="M40 120 q15-42 55-44 h70 q30 0 45 30 l30 6 q15 4 15 16 v6 h-30 a16 16 0 0 0-32 0 H110 a16 16 0 0 0-32 0 H44 a8 8 0 0 1-8-8 v-20 z" style="fill:#7a5a5a" stroke="#a98080" stroke-width="2"/>
+            <circle cx="94" cy="134" r="16" fill="#11151d"/><circle cx="222" cy="134" r="16" fill="#11151d"/>
+            <path d="M100 78 q8-22 40-22 h45 q18 0 27 20 z" fill="#e0c0c0" opacity=".5"/></svg>
+        </div>
+        <div class="cbody">
+          <h3>Audi A4 Avant 2.0 TDI</h3>
+          <div class="specs"><span>2019</span><span>98.500 km</span><span>Diesel</span><span>S-tronic</span><span>140 kW</span></div>
+          <div class="price">
+            <div><small>Cena z DDV</small><b>18.900 €</b></div>
+            <div class="cbtns"><a href="#" class="btn ghost">Podrobno</a><a href="#" class="btn">Naroči</a></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAR 3 -->
+      <article class="ccard">
+        <div class="photo" style="background:linear-gradient(135deg,#2b3a30,#1a241d)">
+          <span class="badge ok">Na zalogi</span><span class="fav">♡</span>
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="180" fill="#22302a"/>
+            <path d="M40 120 q15-42 55-44 h70 q30 0 45 30 l30 6 q15 4 15 16 v6 h-30 a16 16 0 0 0-32 0 H110 a16 16 0 0 0-32 0 H44 a8 8 0 0 1-8-8 v-20 z" style="fill:#5a7a64" stroke="#80a98c" stroke-width="2"/>
+            <circle cx="94" cy="134" r="16" fill="#11151d"/><circle cx="222" cy="134" r="16" fill="#11151d"/>
+            <path d="M100 78 q8-22 40-22 h45 q18 0 27 20 z" fill="#c0e0c8" opacity=".5"/></svg>
+        </div>
+        <div class="cbody">
+          <h3>Renault Clio 1.5 dCi</h3>
+          <div class="specs"><span>2016</span><span>121.000 km</span><span>Diesel</span><span>Ročnik</span><span>66 kW</span></div>
+          <div class="price">
+            <div><small>Cena z DDV</small><b>6.290 €</b></div>
+            <div class="cbtns"><a href="#" class="btn ghost">Podrobno</a><a href="#" class="btn">Naroči</a></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAR 4 -->
+      <article class="ccard">
+        <div class="photo" style="background:linear-gradient(135deg,#2b3445,#1a2030)">
+          <span class="badge">Karambolirano</span><span class="fav">♡</span>
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="180" fill="#26303f"/>
+            <path d="M40 120 q15-42 55-44 h70 q30 0 45 30 l30 6 q15 4 15 16 v6 h-30 a16 16 0 0 0-32 0 H110 a16 16 0 0 0-32 0 H44 a8 8 0 0 1-8-8 v-20 z" style="fill:#4f6b86" stroke="#6f8aa6" stroke-width="2"/>
+            <circle cx="94" cy="134" r="16" fill="#11151d"/><circle cx="222" cy="134" r="16" fill="#11151d"/></svg>
+        </div>
+        <div class="cbody">
+          <h3>Škoda Octavia 2.0 TDI</h3>
+          <div class="specs"><span>2018</span><span>polic. poškodba</span><span>Diesel</span><span>za dele/popravilo</span></div>
+          <div class="price">
+            <div><small>Cena z DDV</small><b>4.800 €</b></div>
+            <div class="cbtns"><a href="#" class="btn ghost">Podrobno</a><a href="#" class="btn">Naroči</a></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAR 5 -->
+      <article class="ccard">
+        <div class="photo" style="background:linear-gradient(135deg,#33304a,#1f1d2e)">
+          <span class="badge ok">Na zalogi</span><span class="fav">♡</span>
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="180" fill="#2a2840"/>
+            <path d="M40 120 q15-42 55-44 h70 q30 0 45 30 l30 6 q15 4 15 16 v6 h-30 a16 16 0 0 0-32 0 H110 a16 16 0 0 0-32 0 H44 a8 8 0 0 1-8-8 v-20 z" style="fill:#6a64a0" stroke="#8a86c0" stroke-width="2"/>
+            <circle cx="94" cy="134" r="16" fill="#11151d"/><circle cx="222" cy="134" r="16" fill="#11151d"/>
+            <path d="M100 78 q8-22 40-22 h45 q18 0 27 20 z" fill="#d0cce8" opacity=".5"/></svg>
+        </div>
+        <div class="cbody">
+          <h3>BMW 320d Touring</h3>
+          <div class="specs"><span>2015</span><span>187.000 km</span><span>Diesel</span><span>Avtomatik</span><span>140 kW</span></div>
+          <div class="price">
+            <div><small>Cena z DDV</small><b>9.950 €</b></div>
+            <div class="cbtns"><a href="#" class="btn ghost">Podrobno</a><a href="#" class="btn">Naroči</a></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAR 6 -->
+      <article class="ccard">
+        <div class="photo" style="background:linear-gradient(135deg,#45402b,#302a1a)">
+          <span class="badge ok">Na zalogi</span><span class="fav">♡</span>
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="180" fill="#383222"/>
+            <path d="M40 120 q15-42 55-44 h70 q30 0 45 30 l30 6 q15 4 15 16 v6 h-30 a16 16 0 0 0-32 0 H110 a16 16 0 0 0-32 0 H44 a8 8 0 0 1-8-8 v-20 z" style="fill:#a08a4f" stroke="#c0aa6f" stroke-width="2"/>
+            <circle cx="94" cy="134" r="16" fill="#11151d"/><circle cx="222" cy="134" r="16" fill="#11151d"/>
+            <path d="M100 78 q8-22 40-22 h45 q18 0 27 20 z" fill="#e8dcc0" opacity=".5"/></svg>
+        </div>
+        <div class="cbody">
+          <h3>Opel Astra 1.4 Turbo</h3>
+          <div class="specs"><span>2020</span><span>64.000 km</span><span>Bencin</span><span>Ročnik</span><span>92 kW</span></div>
+          <div class="price">
+            <div><small>Cena z DDV</small><b>13.200 €</b></div>
+            <div class="cbtns"><a href="#" class="btn ghost">Podrobno</a><a href="#" class="btn">Naroči</a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SPARE PARTS INQUIRY -->
+<section class="parts" id="deli">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <div class="tag">Rezervni deli</div>
+        <h2>Povpraševanje za rezervni del</h2>
+        <p>Izpolnite podatke o vozilu in iskanem delu — odgovor s ceno in razpoložljivostjo prejmete v 24 urah.</p>
+      </div>
+    </div>
+
+    <div class="formcard">
+      <form onsubmit="alert('Povpraševanje poslano! Odgovorimo v 24 urah.');return false;">
+        <div class="fgrid">
+          <div class="field"><label>Znamka <span class="req">*</span></label>
+            <select required><option value="">Izberi znamko…</option><option>Volkswagen</option><option>Audi</option><option>BMW</option><option>Mercedes-Benz</option><option>Renault</option><option>Peugeot</option><option>Citroën</option><option>Škoda</option><option>Opel</option><option>Ford</option><option>Toyota</option><option>Hyundai</option><option>Kia</option><option>Drugo</option></select></div>
+
+          <div class="field"><label>Model <span class="req">*</span></label>
+            <input type="text" placeholder="npr. Golf 7, Passat B8…" required></div>
+
+          <div class="field"><label>Letnik <span class="req">*</span></label>
+            <select required><option value="">Izberi letnik…</option><option>2024</option><option>2022</option><option>2020</option><option>2018</option><option>2016</option><option>2014</option><option>2012</option><option>2010</option><option>2008 ali starejše</option></select></div>
+
+          <div class="field"><label>Motor / gorivo</label>
+            <input type="text" placeholder="npr. 1.6 TDI 81 kW / CAYC"></div>
+
+          <div class="field"><label>Menjalnik</label>
+            <select><option>—</option><option>Ročnik</option><option>Avtomatik / DSG</option></select></div>
+
+          <div class="field"><label>VIN (št. šasije)</label>
+            <input type="text" placeholder="opcijsko — za točen del"></div>
+
+          <div class="field full"><label>Kateri del iščete? <span class="req">*</span></label>
+            <input type="text" placeholder="npr. zadnji odbijač, alternator, vrata leva sprednja, žaromet…" required></div>
+
+          <div class="field full"><label>Kategorija dela</label>
+            <div class="chips">
+              <span class="chip on">Motor &amp; menjalnik</span>
+              <span class="chip">Karoserija</span>
+              <span class="chip">Notranjost</span>
+              <span class="chip">Elektrika</span>
+              <span class="chip">Podvozje</span>
+              <span class="chip">Optika / svetlobe</span>
+              <span class="chip">Pnevmatike / platišča</span>
+            </div>
+          </div>
+
+          <div class="field"><label>Ime in priimek <span class="req">*</span></label>
+            <input type="text" placeholder="Janez Novak" required></div>
+          <div class="field"><label>Telefon <span class="req">*</span></label>
+            <input type="tel" placeholder="031 234 567" required></div>
+          <div class="field"><label>E-pošta <span class="req">*</span></label>
+            <input type="email" placeholder="janez@email.si" required></div>
+
+          <div class="field full"><label>Opomba</label>
+            <textarea rows="3" placeholder="Dodatne informacije, koda dela, slika poškodbe…"></textarea></div>
+        </div>
+
+        <div class="formfoot">
+          <div class="note">📎 Lahko pripnete fotografijo dela ali prometnega dovoljenja.
+            Z oddajo se strinjate z obdelavo podatkov za namen ponudbe.</div>
+          <button class="btn" type="submit" style="padding:14px 30px;font-size:15px">Pošlji povpraševanje →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- HOW ONLINE ORDER WORKS -->
+<section id="kako">
+  <div class="wrap">
+    <div class="shead"><div><div class="tag">Spletni nakup</div><h2>Kako naročim po spletu?</h2></div></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Izberi vozilo ali del</h4><p>Dodaj v košarico ali oddaj povpraševanje za rezervni del.</p></div>
+      <div class="step"><div class="n">2</div><h4>Potrdi ponudbo</h4><p>Prejmeš ceno, razpoložljivost in rok dobave po e-pošti ali telefonu.</p></div>
+      <div class="step"><div class="n">3</div><h4>Plačaj varno</h4><p>Predračun, plačilo po povzetju ali kartica. Možen tudi leasing.</p></div>
+      <div class="step"><div class="n">4</div><h4>Dostava ali prevzem</h4><p>Dostava po vsej Sloveniji v 2–4 dneh ali osebni prevzem na Vranskem.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="trust">
+      <div class="t"><div class="i">✅</div><div><b>30 dni garancije</b><span>na rabljene dele · 4 mesece na motorje z našo vgradnjo</span></div></div>
+      <div class="t"><div class="i">🚚</div><div><b>Dostava po Sloveniji</b><span>preko GLS / Pošta Slovenije</span></div></div>
+      <div class="t"><div class="i">♻️</div><div><b>Pooblaščena razgradnja</b><span>okolju prijazna reciklaža vozil</span></div></div>
+      <div class="t"><div class="i">💬</div><div><b>Odziv v 24 urah</b><span>na vsako povpraševanje</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ODKUP -->
+<section id="odkup" style="background:linear-gradient(135deg,#1a1011,#0e1117)">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap">
+    <div style="max-width:560px">
+      <div class="tag" style="color:var(--red2);font-weight:700;letter-spacing:1.5px;font-size:13px">ODKUP</div>
+      <h2 style="font-size:30px;margin:6px 0 10px">Odkupimo vaše vozilo — tudi karambolirano</h2>
+      <p style="color:var(--mut)">Odkup celih, poškodovanih in dotrajanih vozil z izplačilom takoj in brezplačnim odvozom.
+         Izdamo potrdilo o razgradnji za odjavo.</p>
+    </div>
+    <a href="#kontakt" class="btn" style="padding:15px 30px;font-size:15px">Pošlji vozilo v odkup →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontakt">
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <div class="logo" style="font-size:20px;margin-bottom:14px"><span class="mark">🚗</span> GLOBAL <span class="sub">AVTO</span></div>
+        <p style="font-size:14px">GLOBAL AVTO trgovina in storitve d.o.o.<br>
+        Vransko 57, 3305 Vransko, Slovenija<br>
+        Razgradnja vozil · Rabljeni deli · Prodaja vozil</p>
+        <p style="font-size:13px;margin-top:10px;color:#6b7688">Matična št.: 6648347000 · ID za DDV: SI68652186</p>
+      </div>
+      <div>
+        <h5>Ponudba</h5>
+        <a href="#zaloga">Rabljena vozila</a>
+        <a href="#deli">Rezervni deli</a>
+        <a href="#odkup">Odkup vozil</a>
+        <a href="#">Pnevmatike</a>
+      </div>
+      <div>
+        <h5>Podpora</h5>
+        <a href="#kako">Kako naročim</a>
+        <a href="#">Garancija</a>
+        <a href="#">Dostava in plačilo</a>
+        <a href="#">Pogoji poslovanja</a>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <a href="tel:070999990">📞 070 999 990</a>
+        <a href="tel:036200274">📞 03 620 0274</a>
+        <a href="mailto:avtofestajn@gmail.com">✉️ avtofestajn@gmail.com</a>
+        <a href="#">⏰ Pon–Pet 8–17, Sob 8–12</a>
+        <a href="#">📘 Facebook · 📷 Instagram</a>
+      </div>
+    </div>
+    <div class="fbtm">
+      <span>© 2026 Global Avto d.o.o. — Vse pravice pridržane.</span>
+      <span>Predlog spletne strani · mockup za predstavitev</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>c.classList.toggle('on'));
+  document.querySelectorAll('.fav').forEach(f=>f.onclick=()=>{f.textContent=f.textContent==='♡'?'♥':'♡';f.style.color=f.textContent==='♥'?'#e23838':'';});
+</script>
+</body>
+</html>
