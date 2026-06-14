@@ -45,7 +45,11 @@ export const viewport: Viewport = {
 };
 
 const navItems = [
-  { href: '/', label: 'Domov' },
+  { href: '/o-aplikaciji', label: 'O aplikaciji' },
+  { href: '/contact', label: 'Kontakt' },
+];
+
+const footerNavItems = [
   { href: '/o-aplikaciji', label: 'O aplikaciji' },
   { href: '/privacy-policy', label: 'Zasebnost' },
   { href: '/terms', label: 'Pogoji' },
@@ -95,7 +99,7 @@ export default function SlLayout({ children }: Readonly<{ children: React.ReactN
             </div>
           </div>
           <nav aria-label="Povezave v nogi" className="footer-nav">
-            {navItems.map((item) => (
+            {footerNavItems.map((item) => (
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
             <Link href="/press">Za medije</Link>

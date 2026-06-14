@@ -45,7 +45,10 @@ export const viewport: Viewport = {
 };
 
 const navItems = [
-  { href: '/en', label: 'Home' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const footerNavItems = [
   { href: '/privacy-policy', label: 'Privacy' },
   { href: '/terms', label: 'Terms' },
   { href: '/contact', label: 'Contact' },
@@ -101,7 +104,7 @@ export default function EnLayout({ children }: Readonly<{ children: React.ReactN
             </div>
           </div>
           <nav aria-label="Footer links" className="footer-nav">
-            {navItems.map((item) => (
+            {footerNavItems.map((item) => (
               <Link href={item.href} key={item.href}>
                 {item.label}
               </Link>
