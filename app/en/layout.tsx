@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import LanguageSwitcher from '../LanguageSwitcher';
+import MobileMenu from '../MobileMenu';
 import '../globals.css';
 
 const siteUrl = 'https://ai-alp.com';
@@ -71,6 +72,11 @@ export default function EnLayout({ children }: Readonly<{ children: React.ReactN
             ))}
             <LanguageSwitcher />
           </nav>
+          <MobileMenu
+            navItems={navItems}
+            openLabel="Open menu"
+            closeLabel="Close menu"
+          />
         </header>
 
         <main>{children}</main>

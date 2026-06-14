@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import LanguageSwitcher from '../LanguageSwitcher';
+import MobileMenu from '../MobileMenu';
 import '../globals.css';
 
 const siteUrl = 'https://ai-alp.com';
@@ -71,6 +72,13 @@ export default function SlLayout({ children }: Readonly<{ children: React.ReactN
             <LanguageSwitcher />
             <a href="#waitlist" className="nav-cta">Preizkusi aplikacijo →</a>
           </nav>
+          <MobileMenu
+            navItems={navItems}
+            ctaLabel="Preizkusi aplikacijo →"
+            ctaHref="#waitlist"
+            openLabel="Odpri meni"
+            closeLabel="Zapri meni"
+          />
         </header>
 
         <main>{children}</main>
