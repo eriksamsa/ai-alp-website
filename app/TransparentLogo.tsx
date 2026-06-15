@@ -69,10 +69,13 @@ export default function TransparentLogo({ src, alt, className }: Props) {
       const cropBottom = Math.min(canvas.height, maxY + padding);
       const cropHeight = cropBottom - cropTop;
 
+      if (cropHeight <= 0) return;
+
       const cropped = document.createElement('canvas');
       cropped.width = canvas.width;
       cropped.height = cropHeight;
-      const cCtx = cropped.getContext('2d')!;
+      const cCtx = cropped.getContext('2d');
+      if (!cCtx) return;
       cCtx.drawImage(canvas, 0, cropTop, canvas.width, cropHeight, 0, 0, canvas.width, cropHeight);
 
       canvas.height = cropHeight;
